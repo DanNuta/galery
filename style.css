@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider{
+    width: 700px;
+    margin: auto;
+    height: 300px;
+    background-color: aqua;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+.slider .slider_element{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+
+
+.slider .slider_element .element{
+    width: calc(700px / 3);
+    height: 100%;
+    background-color: blue;
+    position: absolute;
+}
+
+
+.slider .slider_element .element img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.slider .btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 90%;
+   
+}
+
+
+
