@@ -3,65 +3,54 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
 
-let calc = 700/ 3;
-const slideLength = element.length -1;
-let counterSlider = 0;
-let counterSliderElement = 2;
-let counterEl = 2;
-
-
-
+let calc = element[0].getBoundingClientRect().width;
 
 element.forEach(function(item, i){
     item.style.left = i * calc + "px"
 })
 
 
-
-
-let counter = calc;
-
 next.addEventListener("click", function(){
-
     const sliderElement = document.querySelector(".slider_element");
+    const curentCard = sliderElement.querySelector(".active");
+    const nextSibling = curentCard.nextElementSibling;
+    const amountToMove = nextSibling.style.left;
     
-
-    sliderElement.style.transform = `translateX(-${counter}px)`;
-
-
-   activeCard.classList.remove("active");
-   sibling.classList.add("active")
-
-   counter = counter + calc
     
-   
+    
+    sliderElement.style.transform = `translateX(-${amountToMove})`;
+
+    curentCard.classList.remove("active");
+    nextSibling.classList.add("active");
 })
 
 
-let counterStart = calc
+
+
 prev.addEventListener("click", function(){
-
     const sliderElement = document.querySelector(".slider_element");
-    counterStart = counterStart - calc
+    const curentCard = sliderElement.querySelector(".active");
+    const prevSibling = curentCard.previousElementSibling;
+    const amountToMove = prevSibling.style.left;
 
-    sliderElement.style.transform = `translateX(${counterStart}px)`;
-    
-
-
-
-
-
-
-
-    
-
-    counterEl++
-
-
-    
-    
-    element[counterSliderElement].classList.add("active");
    
+    sliderElement.style.transform = `translateX(-${amountToMove})`;
+
+
+    curentCard.classList.remove("active");
+    prevSibling.classList.add("active");
+
     
+    
+})
+
+
+element.forEach(function(item, i){
+
+    item.addEventListener("click", function(){
+           
+           item.classList.replace("element", "full_photo")
+        
+    })
 
 })
